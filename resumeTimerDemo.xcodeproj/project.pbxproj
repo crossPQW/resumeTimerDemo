@@ -498,6 +498,7 @@
 				380B83551BC75BC000317D68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380B83561BC75BC000317D68 /* Build configuration list for PBXNativeTarget "resumeTimerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +507,7 @@
 				380B83581BC75BC000317D68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380B83591BC75BC000317D68 /* Build configuration list for PBXNativeTarget "resumeTimerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +516,7 @@
 				380B835B1BC75BC000317D68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
