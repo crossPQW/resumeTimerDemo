@@ -33,9 +33,35 @@
     //把属性字符串复制给label
     self.timeLabel.attributedText = attributeString;
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(handleTimeEvents) userInfo:nil repeats:YES];
-    [self.timer setFireDate:[NSDate distantFuture]];
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    UIApplication *app = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (bgTask != UIBackgroundTaskInvalid) {
+                [app endBackgroundTask:bgTask];
+                bgTask = UIBackgroundTaskInvalid;
+            }
+        });
+    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleTimeEvents) userInfo:nil repeats:YES];
+        [self.timer setFireDate:[NSDate distantFuture]];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        
+        [[NSRunLoop currentRunLoop] run];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (bgTask != UIBackgroundTaskInvalid) {
+                [app endBackgroundTask:bgTask];
+                bgTask = UIBackgroundTaskInvalid;
+            }
+        });
+    });
+    
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(handleTimeEvents) userInfo:nil repeats:YES];
+//    [self.timer setFireDate:[NSDate distantFuture]];
+//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
 }
 
 
@@ -59,6 +85,11 @@
     self.timeLabel.text = [NSString stringWithFormat:@"%ld",(long)self.number];
     
     NSLog(@"time == %ld",(long)self.number);
+}
+
+- (IBAction)test:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
 }
 
 

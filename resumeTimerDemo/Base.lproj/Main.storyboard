@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="60f-k9-5di">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="60f-k9-5di">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,6 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-h8-dsd">
                                 <rect key="frame" x="50" y="214" width="146.5" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.83600361199999995" green="0.132745481" blue="0.42429614939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="DEU-uh-kzz"/>
@@ -31,7 +32,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZE-6R-zAK">
-                                <rect key="frame" x="227" y="214" width="147" height="30"/>
+                                <rect key="frame" x="227" y="214" width="146.5" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.83600361199999995" green="0.132745481" blue="0.42429614939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="暂停">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,6 +44,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAp-xt-eLU">
                                 <rect key="frame" x="403" y="214" width="146.5" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.83600361199999995" green="0.132745481" blue="0.42429614939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="归零">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,18 +55,26 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-Gx-QyY">
                                 <rect key="frame" x="283" y="163" width="33.5" height="20.5"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.83600361199999995" green="0.132745481" blue="0.42429614939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="1k3-P1-ztR">
-                                <rect key="frame" x="290" y="344" width="20" height="20"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBC-s1-Ff8">
+                                <rect key="frame" x="284.5" y="331" width="31" height="30"/>
+                                <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="5zi-yi-soM"/>
-                                    <constraint firstAttribute="width" constant="20" id="nou-4b-0nU"/>
+                                    <constraint firstAttribute="width" constant="31" id="JqV-ee-7eb"/>
+                                    <constraint firstAttribute="height" constant="30" id="UG8-W2-x42"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" title="Button" image="camera"/>
+                                <state key="selected" image="pingjia"/>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uqP-Zd-rWo"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sZE-6R-zAK" firstAttribute="width" secondItem="FAp-xt-eLU" secondAttribute="width" id="6dP-bb-Mbk"/>
@@ -71,14 +82,14 @@
                             <constraint firstItem="sZE-6R-zAK" firstAttribute="leading" secondItem="2Id-h8-dsd" secondAttribute="trailing" constant="30" id="7Xr-Pl-xzd"/>
                             <constraint firstItem="2Id-h8-dsd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="8Xn-A7-KBm"/>
                             <constraint firstItem="sZE-6R-zAK" firstAttribute="height" secondItem="FAp-xt-eLU" secondAttribute="height" id="8hW-8t-74y"/>
-                            <constraint firstItem="1k3-P1-ztR" firstAttribute="top" secondItem="FAp-xt-eLU" secondAttribute="bottom" constant="100" id="GiE-KN-f9W"/>
-                            <constraint firstItem="1k3-P1-ztR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M0L-A9-32Y"/>
                             <constraint firstItem="2Id-h8-dsd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Rmv-qf-npc"/>
                             <constraint firstItem="2Id-h8-dsd" firstAttribute="top" secondItem="sZE-6R-zAK" secondAttribute="top" id="Tcx-Nz-0pW"/>
+                            <constraint firstItem="ZBC-s1-Ff8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ajL-wX-Vmn"/>
                             <constraint firstItem="sZE-6R-zAK" firstAttribute="top" secondItem="FAp-xt-eLU" secondAttribute="top" id="bQc-Ex-uAf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FAp-xt-eLU" secondAttribute="trailing" constant="30" id="bcT-hQ-5kb"/>
                             <constraint firstItem="2Id-h8-dsd" firstAttribute="width" secondItem="sZE-6R-zAK" secondAttribute="width" id="eLb-T7-P0i"/>
                             <constraint firstItem="2Id-h8-dsd" firstAttribute="height" secondItem="sZE-6R-zAK" secondAttribute="height" id="pLf-yD-kyi"/>
+                            <constraint firstItem="ZBC-s1-Ff8" firstAttribute="top" secondItem="sZE-6R-zAK" secondAttribute="bottom" constant="87" id="s87-Aj-qTp"/>
                             <constraint firstItem="sZE-6R-zAK" firstAttribute="top" secondItem="eLo-Gx-QyY" secondAttribute="bottom" constant="30" id="y01-9g-N5Z"/>
                             <constraint firstItem="FAp-xt-eLU" firstAttribute="leading" secondItem="sZE-6R-zAK" secondAttribute="trailing" constant="30" id="zYf-GX-fDR"/>
                         </constraints>
@@ -104,6 +115,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PHw-Ix-SAc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -117,5 +129,6 @@
     </scenes>
     <resources>
         <image name="camera" width="30" height="30"/>
+        <image name="pingjia" width="30" height="30"/>
     </resources>
 </document>
